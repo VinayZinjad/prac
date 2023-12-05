@@ -596,7 +596,7 @@ lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))
 
 
 ---
-## Slip 4
+## Slip 5
 
 1. Write a Java Program to implement Decorator Pattern
 
@@ -794,7 +794,7 @@ server.listen(PORT, () => {
 ```
 
 
-## Slip 5
+## Slip 6
 
 1. Write a Java Program to implement Facade Design Pattern.
 
