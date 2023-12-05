@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+  </head>
+  <body>
+    <h1>Student Registration</h1>
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" />
+    <br />
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" />
+    <br />
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" />
+    <br />
+    <button id="submit" type="button">Submit</button>
+  </body>
+
+  <script>
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const age = document.getElementById("age");
+    const submit = document.getElementById("submit");
+
+    function validateInput() {
+      let firstNameValue = firstName?.value;
+      let lastNameValue = lastName?.value;
+      let ageValue = age?.value;
+
+      console.log(firstNameValue);
+      console.log(lastNameValue);
+      console.log(ageValue);
+
+      if (firstNameValue === "") {
+        alert("First Name is required.");
+        return false;
+      }
+
+      if (lastNameValue === "") {
+        alert("Last Name is required.");
+        return false;
+      }
+
+      if (ageValue === "") {
+        alert("Age is required.");
+        return false;
+      }
+
+      if (!firstNameValue?.match(/^[a-zA-Z]+$/)) {
+        alert("First Name can only contain alphabets.");
+        return false;
+      }
+
+      if (!lastNameValue?.match(/^[a-zA-Z]+$/)) {
+        alert("Last Name can only contain alphabets.");
+        return false;
+      }
+
+      if (!ageValue?.match(/^\d+$/)) {
+        alert("Age can only contain numbers.");
+        return false;
+      }
+      if (ageValue < 19 || ageValue > 49) {
+        alert("Age should be between 18 and 50.");
+        return false;
+      }
+
+      return true;
+    }
+    submit.addEventListener("click", function () {
+      if (validateInput()) {
+        alert("Student Registration Successful.");
+      }
+    });
+  </script>
+</html>
